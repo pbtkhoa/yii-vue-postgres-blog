@@ -49,6 +49,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'GET post/edit/<id:\d+>' => 'post/edit',
+                'POST post/edit/<id:\d+>' => 'post/edit',
             ],
         ],
     ],

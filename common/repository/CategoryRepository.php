@@ -55,4 +55,16 @@ class CategoryRepository extends Repository
     {
         return $this->model->find()->all();
     }
+
+    /**
+     * With lazy loading
+     *
+     * @param mixed ...$arg
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function with(...$arg)
+    {
+        return $this->model->find()->with(...$arg);
+    }
 }

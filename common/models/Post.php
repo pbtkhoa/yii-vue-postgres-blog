@@ -74,6 +74,33 @@ class Post extends ActiveRecord
         ]);
     }
 
+    public function fields()
+    {
+        return [
+            'id',
+            'title',
+            'slug',
+            'content',
+            'thumbnail',
+            'author_id',
+            'status',
+            'created_at',
+            'updated_at',
+            'excerpt' => function ($model) {
+                $content = $model->content;
+                if (strlen($content) < 20) {
+                    return $content;
+                } else {
+                    $new = wordwrap($content, 20);
+                    $new = explode("\n", $new);
+                    $new = $new[0] . '...';
+
+                    return $new;
+                }
+            }
+        ];
+    }
+
     public function getCategories()
     {
         return $this->hasMany(Category::className(), ['id' => 'category_id'])

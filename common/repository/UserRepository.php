@@ -34,6 +34,7 @@ class UserRepository extends Repository
         $model->email = $data['email'];
         $model->setPassword($data['password']);
         $model->generateAuthKey();
+        $model->nickname = $data['username'];
 
         return $model->save();
     }

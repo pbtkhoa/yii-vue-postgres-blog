@@ -20,7 +20,7 @@ class m181005_030531_create_post_table extends Migration
             'thumbnail' => $this->text(),
             'author_id' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(0),
-            'view' => $this->integer()->notNull(),
+            'view' => $this->integer()->notNull()->defaultValue(0),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ]);

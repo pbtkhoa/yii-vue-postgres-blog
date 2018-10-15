@@ -74,7 +74,6 @@ class PostRepository extends Repository
         return $post;
     }
 
-
     /**
      * With lazy loading
      *

@@ -49,4 +49,10 @@ class Category extends ActiveRecord
             'slug' => $slug
         ]);
     }
+
+    public function getPosts()
+    {
+        return $this->hasMany(Post::className(), ['id' => 'post_id'])
+            ->viaTable('post_category', ['category_id' => 'id']);
+    }
 }

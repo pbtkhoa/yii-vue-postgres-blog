@@ -51,6 +51,8 @@ return [
             'rules' => [
                 'GET post/edit/<id:\d+>' => 'post/edit',
                 'POST post/edit/<id:\d+>' => 'post/edit',
+                'GET api/post/<slug:[A-Za-z0-9 -_.]+>' => 'api/post/detail',
+                'GET api/category/<slug:[A-Za-z0-9 -_.]+>' => 'api/category/detail',
             ],
         ],
     ],

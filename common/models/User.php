@@ -192,4 +192,9 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    public function getPosts()
+    {
+        return $this->hasMany(Post::className(),  ['author_id' => 'id']);
+    }
 }
